@@ -1,0 +1,1 @@
+g++ -o cpp/finder.o cpp/finder.cpp cpp/binary_heap.cpp -std=c++17; ./cpp/finder.o tests/test2.txt results/result2.txt

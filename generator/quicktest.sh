@@ -1,0 +1,1 @@
+python3 generator/generator.py tests/test2.txt

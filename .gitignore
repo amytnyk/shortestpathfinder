@@ -1,0 +1,4 @@
+tests
+results
+__pycache__
+*.o

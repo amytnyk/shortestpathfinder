@@ -1,0 +1,1 @@
+python3 python/finder.py tests/test2.txt results/result.txt
