@@ -1,6 +1,5 @@
 import argparse
 from skimage import io
-from skimage.color import rgb2gray
 
 
 def h2t(path: str, min_height: float, max_height: float) -> tuple[int, list[list[float]]]:
@@ -37,7 +36,7 @@ def main():
     with open(args.test, 'w', encoding='utf-8') as file:
         file.write(f'{size} {args.step}\n')
         file.write(f'{args.start_row} {args.start_col}\n')
-        file.write(f'{args.end_row} {args.end_row}\n')
+        file.write(f'{args.end_row} {args.end_col}\n')
         file.write('\n'.join(map(lambda row: ' '.join(map(str, row)), heightmap)))
 
 
