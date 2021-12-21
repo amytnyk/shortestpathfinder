@@ -107,6 +107,11 @@ python3.9 utils/h2t.py heightmaps/heightmap.png tests/test.txt start_row start_c
 * Для інтерактивного відображення накоротшого шляху на поверхні розроблений модуль visualizer:
 ![Heighmap](./assets/map3d.png)
 
+Команда для візуалізації:
+```
+python3.9 utils/visualizer.py tests/test.txt results/result.txt
+```
+
 ## Розподіл роботи
 * Пошук шляху за алгоритмом Dijkstra — Омельчук Олег, Плетінка Андрій
 * Пошук шляху за алгоритмом A* — Митник Олексій
