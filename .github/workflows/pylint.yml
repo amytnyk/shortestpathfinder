@@ -14,8 +14,8 @@ jobs:
     - name: Install dependencies
       run: |
 
-        python3.9 -m pip install --upgrade pip
-        pip3.9 install pylint
+        python -m pip install --upgrade pip
+        pip install pylint
     - name: Analysing the code with pylint
       run: |
-        python3.9 -m pylint $(find . -type f -name "core/*.py")
+        python -m pylint $(find . -type f -name "core/*.py")

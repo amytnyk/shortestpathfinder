@@ -13,4 +13,4 @@ jobs:
       uses: actions/checkout@v2
     - name: Unit tests
       run: |
-        python3.9 -m unittest
+        python -m unittest
