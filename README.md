@@ -106,21 +106,11 @@ python3.9 utils/h2t.py heightmaps/heightmap.png tests/test.txt start_row start_c
 * Для інтерактивного відображення накоротшого шляху на поверхні розроблений модуль visualizer:
 ![Heighmap](./assets/map3d.png)
 
-To generate test:
-```
-python3.9 ./generator/generator.py tests/test.txt --rows 500 --cols 500 --end_row 499 --end_col 499
-```
-
-To run python version:
-```
-python3.9 ./python/finder.py tests/test.txt results/result_py.txt
-```
-
-The following command would print nothing if results are equal:
-```
-diff results/result_py.txt results/result_cpp.txt
-```
-
-
-
-This app was developed by a team of CS students at UCU.
+## Розподіл роботи
+![Heighmap](./assets/map1.png)
+* Пошук шляху за алгоритмом Дейкстри — Омельчук Олег, Плетінка Андрій
+* Пошук шляху за алгоритмом A* — Митник Олексій
+* Візуалізатор — Іванов Сергій
+* H2T — Мазурик Антон
+* Unit Тести — Мазурик Антон, Плетінка Андрій
+* Порівняння алгоритму Dijkstra і A* — Іванов Сергій, Митник Олексій 
