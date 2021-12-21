@@ -1,5 +1,8 @@
 Shortest Path Problem
 
+[![Pylint](https://github.com/amytnyk/shortestpathproblem/actions/workflows/pylint.yml/badge.svg)](https://github.com/shortestpathproblem/workshop/actions/workflows/pylint.yml)
+[![Tests](https://github.com/amytnyk/shortestpathproblem/actions/workflows/tests.yml/badge.svg)](https://github.com/amytnyk/shortestpathproblem/actions/workflows/tests.yml)
+
 
 To generate test:
 ```

@@ -10,6 +10,9 @@ Point = tuple[int, int]
 def find_shortest_path(heights: list[list[float]], step: float,
                        point1: Point,
                        point2: Point) -> tuple[float, list[Point]]:
+    """
+    Calculates shortest path between two points using Dijkstra algorithm
+    """
     rows = len(heights)
     cols = len(heights[0])
 
