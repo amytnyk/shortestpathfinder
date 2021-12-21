@@ -50,7 +50,7 @@ def find_shortest_path(heights: list[list[float]], step: float,
                 if distances[y][x] > new_dist:
                     parents[y][x] = (py, px)
                     distances[y][x] = new_dist
-                    new_dist += step * manhattan_distance(point2, y, x)
+                    new_dist += step * manhattan_distance(point2, (y, x))
                     hdistances[y][x] = new_dist
                     heapq.heappush(heap, [new_dist, (y, x)])
 
