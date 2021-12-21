@@ -107,7 +107,6 @@ python3.9 utils/h2t.py heightmaps/heightmap.png tests/test.txt start_row start_c
 ![Heighmap](./assets/map3d.png)
 
 ## Розподіл роботи
-![Heighmap](./assets/map1.png)
 * Пошук шляху за алгоритмом Дейкстри — Омельчук Олег, Плетінка Андрій
 * Пошук шляху за алгоритмом A* — Митник Олексій
 * Візуалізатор — Іванов Сергій
