@@ -4,14 +4,16 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        python-version: ['3.9']
     steps:
     - name: Checkout main branch
       uses: actions/checkout@v2
     - name: Install dependencies
       run: |
+
         python3.9 -m pip install --upgrade pip
         pip3.9 install pylint
     - name: Analysing the code with pylint
