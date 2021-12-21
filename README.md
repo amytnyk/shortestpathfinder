@@ -1,6 +1,6 @@
 Shortest Path Problem
 
-[![Pylint](https://github.com/amytnyk/shortestpathfinder/actions/workflows/pylint.yml/badge.svg)](https://github.com/shortestpathfinder/workshop/actions/workflows/pylint.yml)
+[![Pylint](https://github.com/amytnyk/shortestpathfinder/actions/workflows/pylint.yml/badge.svg)](https://github.com/amytnyk/shortestpathfinder/actions/workflows/pylint.yml)
 [![Tests](https://github.com/amytnyk/shortestpathfinder/actions/workflows/tests.yml/badge.svg)](https://github.com/amytnyk/shortestpathfinder/actions/workflows/tests.yml)
 
 
