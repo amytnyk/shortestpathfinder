@@ -7,9 +7,20 @@ import heapq
 
 Point = tuple[int, int]
 
+
+def manhattan_distance(point1: Point, point2: Point):
+    """
+    Returns manhattan distance between 2 points
+    """
+    return fabs(point2[0] - point1[0]) + fabs(point2[1] - point1[1])
+
+
 def find_shortest_path(heights: list[list[float]], step: float,
                        point1: Point,
                        point2: Point) -> tuple[float, list[Point]]:
+    """
+    Calculates shortest path between two points
+    """
     rows = len(heights)
     cols = len(heights[0])
 
@@ -22,7 +33,7 @@ def find_shortest_path(heights: list[list[float]], step: float,
 
     parents[point1[0]][point1[1]] = (0, 0)
     distances[point1[0]][point1[1]] = 0
-    hdistances[point1[0]][point1[1]] = step * (fabs(point2[0] - point1[0]) + fabs(point2[1] - point1[1]))
+    hdistances[point1[0]][point1[1]] = step * manhattan_distance(point1, point2)
 
     while heap:
         dist, [py, px] = heapq.heappop(heap)
@@ -39,7 +50,7 @@ def find_shortest_path(heights: list[list[float]], step: float,
                 if distances[y][x] > new_dist:
                     parents[y][x] = (py, px)
                     distances[y][x] = new_dist
-                    new_dist += step * (fabs(point2[0] - y) + fabs(point2[1] - x))
+                    new_dist += step * manhattan_distance(point2, y, x)
                     hdistances[y][x] = new_dist
                     heapq.heappush(heap, [new_dist, (y, x)])
 

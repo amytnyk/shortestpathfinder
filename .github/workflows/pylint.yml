@@ -1,0 +1,19 @@
+name: Pylint
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout main branch
+      uses: actions/checkout@v2
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip3 install pylint
+    - name: Analysing the code with pylint
+      run: |
+        pylint $(find . -type f -name "core/*.py")

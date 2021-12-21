@@ -1,8 +1,14 @@
+"""
+Converts heightmap to txt test
+"""
 import argparse
 from skimage import io
 
 
 def h2t(path: str, min_height: float, max_height: float) -> tuple[int, list[list[float]]]:
+    """
+    Returns size and height list
+    """
     image = io.imread(path, as_gray=True)
     size, height = image.shape
     if size != height:
@@ -14,6 +20,9 @@ def h2t(path: str, min_height: float, max_height: float) -> tuple[int, list[list
 
 
 def main():
+    """
+    H2T
+    """
     parser = argparse.ArgumentParser(
         description='Converts white/black heightmap to test')
     parser.add_argument("image", help="path to heightmap")
@@ -29,7 +38,8 @@ def main():
 
     size, heightmap = h2t(args.image, args.min_height, args.max_height)
 
-    def in_bounds(x): return 0 <= x < size
+    def in_bounds(val: int):
+        return 0 <= val < size
     if not all(map(in_bounds, [args.start_row, args.start_col, args.end_row, args.end_col])):
         raise 'Invalid options: coordinates are not in [0; size)'
 

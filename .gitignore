@@ -4,3 +4,4 @@ __pycache__
 *.o
 .vscode
 .idea
+*_big.png
