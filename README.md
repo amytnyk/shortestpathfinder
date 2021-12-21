@@ -69,10 +69,22 @@ python3.9 core/finder.py tests/test.txt results/result.txt --dijkstra
 ### Зміни в реалізації
 ```python:core/a_star.py
 hdistances = [[inf for _ in range(cols)] for _ in range(rows)]
-hdistances[point1[0]][point1[1]] = step * manhattan_distance
+hdistances[point1[0]][point1[1]] = step * manhattan_distance(point1, point2)
 ```
-
-
+* Тепер будемо крім масиву distances, зберігати hdistances[y][x] - найкоротшу довжину шляху від початкової вершини до (y, x) + оцінену(мінімальну) відстань від (y, x) до кінцевої.
+```python:core/a_star.py
+if distances[y][x] > new_dist:
+    parents[y][x] = (py, px)
+    distances[y][x] = new_dist
+    new_dist += step * manhattan_distance(point2, (y, x))
+    hdistances[y][x] = new_dist
+    heapq.heappush(heap, [new_dist, (y,x)])
+```
+* В heap теж будемо додавати суму реальної та оціненої відстані, проте в distances[y, x] зберігатимемо ту саму найкоротшу довжину шляху від початкової вершини до (y, x)
+### Команда для запуску алгоритму A* для тесту test.txt і запису результату у файл result.txt
+```
+python3.9 core/finder.py tests/test.txt results/result.txt
+```
 ## Порівняння алгоритмів A* та Dijkstra
 ### Порівнняння на тестах, де потрібно йти з лівого верхнього кута мапи в правий нижній:
 ![Comparison](./assets/comparison.png)
@@ -82,6 +94,17 @@ hdistances[point1[0]][point1[1]] = step * manhattan_distance
 Можемо бачити, майже ту саму ситуацію, тільки на 25M вершин A\* працює вже приблизно в 5 разів швидше за Dijkstra
 
 ## Features
+### Використання на реальних даних
+* Щоб запустити алгоритм на даних певної поверхні, яка не задана в текстовому файлі, був розроблений модуль H2T (Heightmap to test), який зчитує чорно-білу карту висот та генерує текстовий тест. Зразок такої карти:
+![Heighmap](./assets/map1.png)
+* Зручність полягає у тому, що таку карту можна як згенерувати в певній програмі, так і взяти з реальної поверхні Землі, використовуючи https://tangrams.github.io/heightmapper/
+Команда для запуску H2T:
+```
+python3.9 utils/h2t.py heightmaps/heightmap.png tests/test.txt start_row start_col end_row end_col --min_height --max_height
+```
+### Візуалізація
+* Для інтерактивного відображення накоротшого шляху на поверхні розроблений модуль visualizer:
+![Heighmap](./assets/map3d.png)
 
 To generate test:
 ```
