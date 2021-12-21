@@ -112,4 +112,4 @@ python3.9 utils/h2t.py heightmaps/heightmap.png tests/test.txt start_row start_c
 * Візуалізатор — Іванов Сергій
 * H2T — Мазурик Антон
 * Unit Тести — Мазурик Антон, Плетінка Андрій
-* Порівняння алгоритму Dijkstra і A* — Іванов Сергій, Митник Олексій 
+* Порівняння алгоритму Dijkstra і A* — Митник Олексій 
